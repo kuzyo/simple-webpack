@@ -1,4 +1,5 @@
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     context: path.join(__dirname, 'src'), // shared folder for source files
@@ -15,6 +16,20 @@ module.exports = {
         inline: true,
         stats: 'errors-only'
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'src', 'index.html'),
+            hash: true,
+            chunks: ['app']
+        }),
+
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'src', 'index.html'),
+            hash: true,
+            filename: 'about.html',
+            chunks: ['about']
+        })
+    ],
     module: {
         loaders: [
             {
