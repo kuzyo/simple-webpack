@@ -22,6 +22,11 @@ module.exports = {
             filename: 'about.html',
             chunks: ['about']
         }),
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, 'src', 'views', 'index.pug'),
+            filename: 'index.html',
+            chunks: ['index']
+        }),
     ],
     module: {
         loaders: [
