@@ -18,17 +18,10 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src', 'index.html'),
-            hash: true,
-            chunks: ['app']
-        }),
-
-        new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src', 'index.html'),
-            hash: true,
+            template: path.join(__dirname, 'src', 'views', 'about.pug'),
             filename: 'about.html',
             chunks: ['about']
-        })
+        }),
     ],
     module: {
         loaders: [
@@ -36,7 +29,8 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 include: path.join(__dirname, 'src')
-            }
+            },
+            { test: /\.pug/, loader: 'pug-loader'  }
         ]
     }
 };

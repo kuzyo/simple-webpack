@@ -1,0 +1,14 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title foo
+  body
+    - var x = 5;
+    div
+      ul
+      - for (var i=1; i<=x; i++) {
+          li Hello
+      - }
+
+
