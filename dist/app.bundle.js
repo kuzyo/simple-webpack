@@ -69,10 +69,15 @@
 /******/ ([
 /* 0 */,
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 alert('Welcome');
-
+(function () {
+  return console.log('works');
+})();
 
 /***/ })
 /******/ ]);
