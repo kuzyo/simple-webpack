@@ -10,6 +10,11 @@ module.exports = {
         path: path.join(__dirname, 'dist'),
         filename: '[name].bundle.js'
     },
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        inline: true,
+        stats: 'errors-only'
+    },
     module: {
         loaders: [
             {
