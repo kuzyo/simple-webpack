@@ -2,6 +2,7 @@ var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    devtool: 'source-map', // only for development
     context: path.join(__dirname, 'src'), // shared folder for source files
     entry:  {
         app: './app/app.js', // relative to context
