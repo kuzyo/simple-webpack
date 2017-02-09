@@ -1,2 +1,7 @@
 require('../styles/app.scss');
-(() => console.log('works'))();
+function reset() {
+    console.log('reset');
+}
+
+reset();
+console.log('app');

@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -21,15 +22,20 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'views', 'about.pug'),
             filename: 'about.html',
-            chunks: ['about']
+            chunks: ['common', 'about']
         }),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'views', 'index.pug'),
             filename: 'index.html',
-            chunks: ['app']
+            chunks: ['common','app']
         }),
 
         new ExtractTextPlugin('styles/app.css'),
+
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'common',
+            filename: 'js/common.js'
+        })
     ],
     module: {
         loaders: [
